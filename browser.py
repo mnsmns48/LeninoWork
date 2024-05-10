@@ -1,7 +1,6 @@
-import asyncio
+import pickle
 
 import undetected_chromedriver as uc
-
 from config import root_path
 
 

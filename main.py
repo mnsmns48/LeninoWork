@@ -1,15 +1,19 @@
-import asyncio
+from browser import browser
+from config import config
+from crud import output
+from engine import db_start_sync
+from func import update_data
+from models import Base
 
-from func import info
 
-
-async def main():
-    text = await info()
-    print(text)
+def main():
+    db_start_sync(Base, tunnel=config.tunnel)
+    update_data(driver=browser(), url=config.link, tunnel=config.tunnel)
+    # output(tunnel=config.tunnel)
 
 
 if __name__ == '__main__':
     try:
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         print('Script stopped')
