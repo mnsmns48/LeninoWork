@@ -22,4 +22,4 @@ class LeninoWork(Base):
     locality: Mapped[str]
     link: Mapped[str]
     updated_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=False))
-    publication: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=False))
+

@@ -82,7 +82,7 @@ def update_data(driver: uc, url: str, **kwargs):
             else:
                 link = f"{url}&p={count}"
                 driver.get(link)
-                time.sleep(random.randint(5, 10))
+                time.sleep(random.randint(3, 10))
             items = driver.find_elements(By.CSS_SELECTOR, "[data-marker='item']")
             for item in items:
                 soup = BeautifulSoup(markup=item.get_attribute('outerHTML'), features='lxml')

@@ -1,3 +1,4 @@
 /chromedriver
 /venv/
 /.env
+/chromedriver.exe
