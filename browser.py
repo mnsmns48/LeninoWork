@@ -11,7 +11,7 @@ def browser() -> uc:
         "profile.managed_default_content_settings": {"images": 2}
     }
     # options.add_experimental_option('prefs', chrome_prefs)
-    driver = uc.Chrome(headless=False,
+    driver = uc.Chrome(headless=True,
                        use_subprocess=False,
                        version_main=114,
                        options=options,

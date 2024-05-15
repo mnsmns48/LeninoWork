@@ -54,4 +54,5 @@ def ssh_connect(function: Callable) -> Callable:
 
 @ssh_connect
 def db_start_sync(Base, **kwargs):
+    Base.metadata.drop_all(bind=kwargs.get('bind').engine)
     Base.metadata.create_all(bind=kwargs.get('bind').engine)
