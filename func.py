@@ -72,9 +72,9 @@ def update_data(driver: uc, url: str, **kwargs):
     last_pag_page = pag_l[-2].find_element(By.TAG_NAME, 'a').get_attribute('data-value')
     count = 1
     with open('blacklist_author.txt', 'r', encoding='utf-8') as file:
-        black_authors = file.readlines()
+        black_authors = [line.strip() for line in file.readlines()]
     with open('blacklist_words.txt', 'r', encoding='utf-8') as file:
-        block_words = file.readlines()
+        block_words = [line.strip() for line in file.readlines()]
     with Session(bind=kwargs.get('bind').engine) as session:
         while count != int(last_pag_page) + 1:
             if count == 1:
